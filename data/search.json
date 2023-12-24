@@ -1,1 +1,1 @@
-{"list":[{"title":"docsPath","link":"<a href=\"global.html#docsPath\">docsPath</a>","description":"<p>Get the absolute path of the &quot;docs&quot; directory</p>"}]}
+{"list":[{"title":"currentDeveloperName","link":"<a href=\"global.html#currentDeveloperName\">currentDeveloperName</a>","description":"<p>Get the name or username of the developer from git</p>"},{"title":"docsPath","link":"<a href=\"global.html#docsPath\">docsPath</a>","description":"<p>Get the absolute path of the &quot;docs&quot; directory</p>"}]}
