@@ -8,7 +8,13 @@
 import {cosmiconfig} from "cosmiconfig";
 
 /**
- * Loads the environment file (Looks for it within the project scope
+ * Loads the environment file (Looks for it within the project scope)
+ * the environment file is not .env but .envrc.json. An example file
+ * (which is a copy of it) has been added for reference. Just like the
+ * .env files they are in key-value pair, the only difference is that
+ * this is JSON. For every environment variable you want to use, it is
+ * recommended you add it to the .envrc.json file and exporting it as
+ * a constant in the config.js (this file)
  * @param {String}
  * @type {PublicExplorer}
  */
