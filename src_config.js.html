@@ -22,12 +22,25 @@ const explorer = cosmiconfig('env', {
     searchStrategy: "project"
 });
 
+/**
+ * asynchronously search for the configuration file
+ * @type {CosmiconfigResult}
+ */
 const env = await explorer.search();
 
 if (!env) {
     console.error('Configuration file not found.');
 }
+
+/**
+ * Connection string for MongoDB. This is extracted from the environment variable
+ * @type {string}
+ */
 const MONGO_URL = env.config.mongoUrl;
+
+/**
+ * Port number for the server. This is extracted from the environment variable
+ */
 const PORT = env.config.port;
 
 export {MONGO_URL, PORT}

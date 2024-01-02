@@ -9,14 +9,14 @@ import {getUserByEmail} from "../db/users.js";
 import {encrypt, randomCryptoHash} from "../helpers/cryptography.js";
 
 /**
- * Asynchronous function for logging users in.
+ * Controller for logging users in
  *
  * @function
  * @async
  * @param {IncomingMessage} request - The request object.
  * @param {ServerResponse} response - The response object.
- * @returns {Promise&lt;void>} A promise that resolves when the registration process is complete.
- * @throws {Error} If an error occurs during the registration process.
+ * @returns {Promise&lt;void>} - A promise that resolves when the login process is complete.
+ * @throws {Error} - If there is an error during the login process.
  */
 export const login = async (request, response) => {
     try {

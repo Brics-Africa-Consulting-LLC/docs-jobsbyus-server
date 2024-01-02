@@ -68,10 +68,10 @@ const server = http.createServer(app);
 await connectToDatabase();
 
 /**
- * started server and listening to port
+ * start server and listening to port
  */
 server.listen(PORT, () => {
-    console.log('Listening on port 8080');
+    console.log(`Listening on port ${PORT}`);
 });
 
 

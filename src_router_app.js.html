@@ -5,12 +5,12 @@ import {register} from "../controller/register.js";
 import {login} from "../controller/login.js";
 
 /**
- * base router for the API
+ * Main router
  * @type {Router}
  */
 const router = express.Router();
 
-//register route
+// register routes here
 router.post('/auth/register', register)
 router.post('/auth/login', login)
 
