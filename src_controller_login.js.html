@@ -27,7 +27,6 @@ export const login = async (request, response) => {
         }
 
         const user = await getUserByEmail(email).select("+authentication.salt +authentication.password").findOne();
-        console.log(user);
         if(!user){
             return response.status(400).json({"msg": "User not found"}).end();
         }
