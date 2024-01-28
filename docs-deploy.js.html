@@ -31,7 +31,7 @@ export function deployDocs(docsPath, currentDeveloperName) {
     console.log(`Deploying documentation to: ${docsPath}`);
     console.log(execSync(`git add ${docsPath}`).toString().trim());
     console.log(execSync(`git commit -m "${currentDeveloperName} updated docs :memo:"`).toString().trim());
-    console.log(execSync("git subtree push --prefix docs docs mod").toString().trim());
+    console.log(execSync("git subtree push --prefix docs docs main").toString().trim());
 }
 
 
