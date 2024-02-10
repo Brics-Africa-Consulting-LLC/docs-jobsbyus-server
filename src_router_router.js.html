@@ -18,7 +18,7 @@ import {
 import {verifyOtp} from "../controller/verifyOtp.js";
 import {logout} from "../controller/logout.js";
 import {getAllUsers, getUser, updateUserInfo} from "../controller/user.js";
-import {getAllSkills} from "../controller/skill.js";
+import {getAllSkills, getSkill, updateSkill} from "../controller/skill.js";
 import {createSkill} from "../db/skills.js";
 
 /**
@@ -32,21 +32,22 @@ const router = express.Router();
 /**
  * @name Register Route
  * @route {POST} /auth/register
- * @description Register user - **parameters**: _email_, _first_name_, _password_
+ * @description Register user - **parameters**: _email_, _first_name_, _password_ | required fields: _email_,
+ * _first_name_, _password_
  */
 router.post('/auth/register', register);
 
 /**
  * @name Login Route
  * @route {POST} /auth/login
- * @description Login user - **parameters**: _email_, _password_
+ * @description Login user - **parameters**: _email_, _password_ | required fields: _email_, _password_
  */
 router.post('/auth/login', login);
 
 /**
  * @name Verify OTP Route
  * @route {POST} /auth/verify/otp
- * @description Verify OTP - **parameters**: _email_, _otp_
+ * @description Verify OTP - **parameters**: _email_, _otp_ | required fields: _email_, _otp_
  */
 router.post('/auth/verify/otp', verifyOtp);
 
@@ -81,7 +82,7 @@ router.get('/auth/google/callback', googleAuthenticationCallback);
 /**
  * @name Logout Route
  * @route {POST} /auth/logout
- * @description Logout user - **parameters**: _email_ or _user_id_
+ * @description Logout user - **parameters**: _email_ or _user_id_ | required fields: _email_ or _user_id_
  */
 router.post('/auth/logout', logout);
 
@@ -92,7 +93,8 @@ router.post('/auth/logout', logout);
 /**
  * @name Update User Info
  * @route {PATCH} /user/update
- * @description Update User Info - **parameters**: _id_, _user_
+ * @description Update User Info - **parameters**: _id_, _user_ | required fields: _first_name_, _email_,
+ * _password_, _username_
  */
 router.patch('/user/update', isAuthenticated, updateUserInfo);
 
@@ -115,6 +117,13 @@ router.get('/user', isAuthenticated, getUser);
 //======================================= Skills Routes ========================================================
 
 /**
+ * @name Get Skill
+ * @route {GET} /skill
+ * @description Get Skill - **parameters**: _id_ | required fields: _id_
+ */
+router.get('/skill', isAuthenticated, getSkill);
+
+/**
  * @name Get All Skills
  * @route {GET} /skills
  * @description Get All Skills
@@ -124,16 +133,16 @@ router.get('/skills', isAuthenticated, getAllSkills);
 /**
  * @name Create Skill
  * @route {POST} /skill/create
- * @description Create Skill - **parameters**: _skill_
+ * @description Create Skill - **parameters**: _skill_ | required fields: _skill_name_, _years_of_experience_
  */
 router.post("/skill/create", isAuthenticated, createSkill);
 
 /**
  * @name Update Skill
  * @route {PATCH} /skill/update
- * @description Update Skill - **parameters**: _id_, _skill_
+ * @description Update Skill - **parameters**: _id_, _skill_ | required fields: _skill_name_, _years_of_experience_
  */
-router.patch("/skill/update", isAuthenticated, updateUserInfo);
+router.patch("/skill/update", isAuthenticated, updateSkill);
 //======================================= End Skills Routes ========================================================
 export default router;
 </code></pre></article></section><footer class="footer" id="PeOAagUepe"><div class="wrapper">Developed and documented with 💖 and ☕🍵 by <a href="#">kurtiz</a>, <a href="#">borngod</a> and <a href="#">eshun</a></div></footer></div></div></div><div class="search-container" id="PkfLWpAbet" style="display:none"><div class="wrapper" id="iCxFxjkHbP"><button class="icon-button search-close-button" id="VjLlGakifb" aria-label="close search"><svg><use xlink:href="#close-icon"></use></svg></button><div class="search-box-c"><svg><use xlink:href="#search-icon"></use></svg> <input type="text" id="vpcKVYIppa" class="search-input" placeholder="Search..." autofocus></div><div class="search-result-c" id="fWwVHRuDuN"><span class="search-result-c-text">Type anything to view search result</span></div></div></div><div class="mobile-menu-icon-container"><button class="icon-button" id="mobile-menu" data-isopen="false" aria-label="menu"><svg><use xlink:href="#menu-icon"></use></svg></button></div><div id="mobile-sidebar" class="mobile-sidebar-container"><div class="mobile-sidebar-wrapper"><a href="/" class="sidebar-title sidebar-title-anchor">Job By Us</a><div class="mobile-nav-links"><div class="navbar-item"><a id="" href="https://github.com/Brics-Africa-Consulting-LLC" target="_blank"><img width="35" src="https://user-images.githubusercontent.com/25181517/192108374-8da61ba1-99ec-41d7-80b8-fb2f7c0a4948.png" alt="GitHub" title="GitHub"></a></div></div><div class="mobile-sidebar-items-c"><div class="sidebar-section-title with-arrow" data-isopen="false" id="sidebar-modules"><div>Modules</div><svg><use xlink:href="#down-icon"></use></svg></div><div class="sidebar-section-children-container"><div class="sidebar-section-children"><a href="module-App.html">App</a></div><div class="sidebar-section-children"><a href="module-Config.html">Config</a></div><div class="sidebar-section-children"><a href="module-Database.html">Database</a></div><div class="sidebar-section-children"><a href="module-EducationModel.html">EducationModel</a></div><div class="sidebar-section-children"><a href="module-GoogleAuthentication.html">GoogleAuthentication</a></div><div class="sidebar-section-children"><a href="module-Login.html">Login</a></div><div class="sidebar-section-children"><a href="module-Logout.html">Logout</a></div><div class="sidebar-section-children"><a href="module-Mailer.html">Mailer</a></div><div class="sidebar-section-children"><a href="module-Middlewares.html">Middlewares</a></div><div class="sidebar-section-children"><a href="module-Register.html">Register</a></div><div class="sidebar-section-children"><a href="module-Router.html">Router</a></div><div class="sidebar-section-children"><a href="module-SkillModel.html">SkillModel</a></div><div class="sidebar-section-children"><a href="module-UserController.html">UserController</a></div><div class="sidebar-section-children"><a href="module-UserController.html">UserController</a></div><div class="sidebar-section-children"><a href="module-UserModel.html">UserModel</a></div><div class="sidebar-section-children"><a href="module-VerifyOtp.html">VerifyOtp</a></div></div><div class="sidebar-section-title with-arrow" data-isopen="false" id="sidebar-global"><div>Global</div><svg><use xlink:href="#down-icon"></use></svg></div><div class="sidebar-section-children-container"><div class="sidebar-section-children"><a href="global.html#deployDocs">deployDocs</a></div><div class="sidebar-section-children"><a href="global.html#encrypt">encrypt</a></div><div class="sidebar-section-children"><a href="global.html#getCurrentDeveloperName">getCurrentDeveloperName</a></div><div class="sidebar-section-children"><a href="global.html#getDocsPath">getDocsPath</a></div><div class="sidebar-section-children"><a href="global.html#randomCryptoHash">randomCryptoHash</a></div></div></div><div class="mobile-navbar-actions"><div class="navbar-right-item"><button class="icon-button search-button" aria-label="open-search"><svg><use xlink:href="#search-icon"></use></svg></button></div><div class="navbar-right-item"><button class="icon-button theme-toggle" aria-label="toggle-theme"><svg><use class="theme-svg-use" xlink:href="#light-theme-icon"></use></svg></button></div><div class="navbar-right-item"><button class="icon-button font-size" aria-label="change-font-size"><svg><use xlink:href="#font-size-icon"></use></svg></button></div></div></div></div><script type="text/javascript" src="scripts/core.min.js"></script><script src="scripts/search.min.js" defer="defer"></script><script src="scripts/third-party/fuse.js" defer="defer"></script><script type="text/javascript">var tocbotInstance=tocbot.init({tocSelector:"#eed4d2a0bfd64539bb9df78095dec881",contentSelector:".main-content",headingSelector:"h1, h2, h3",hasInnerContainers:!0,scrollContainer:".main-content",headingsOffset:130,onClick:bringLinkToView})</script></body></html>
