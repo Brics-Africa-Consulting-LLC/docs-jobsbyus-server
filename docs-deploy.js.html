@@ -29,9 +29,9 @@ export function getCurrentDeveloperName() {
  */
 export function deployDocs(docsPath, currentDeveloperName) {
     console.log(`Deploying documentation to: ${docsPath}`);
-    console.log(execSync(`cd ${docsPath} &amp;&amp; git add .`).toString().trim());
-    console.log(execSync(`cd ${docsPath} &amp;&amp; git commit -m "${currentDeveloperName} updated docs :memo:"`).toString().trim());
-    console.log(execSync("git push").toString().trim());
+    console.log(execSync(`cd docs &amp;&amp; git add .`).toString().trim());
+    console.log(execSync(`cd docs &amp;&amp; git commit -m "${currentDeveloperName} updated docs :memo:"`).toString().trim());
+    console.log(execSync("cd docs &amp;&amp; git push").toString().trim());
 }
 
 
